@@ -226,8 +226,8 @@ namespace Expert_system_for_choosing_antivirus_software
 
             if (finalChoice == 0)
                 goto a;
-            if (finalChoice == 1) ;
-            System.Environment.Exit(1);
+            if (finalChoice == 1)
+                System.Environment.Exit(1488);
 
         }
     }
