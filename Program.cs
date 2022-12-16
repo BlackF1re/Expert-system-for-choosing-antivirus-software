@@ -68,10 +68,13 @@ namespace Expert_system_for_choosing_antivirus_software
             int secondChoice;
             int thirdChoice;
 
+            int finalChoice;
+
             bool result;
 
             Console.WriteLine("Далее Вам будут заданы вопросы для подбора соответствующего Вам антивирусного пакета. Ответьте на них, используя соответствующие цифры\r\n");
 
+            a: 
             Console.WriteLine("Какой тип антивирусного ПО вам требуется? 1-Антивирусный сканер, 2-Антивирусный сторож, 3-Полифаг, 4-Ревизор, 5-Блокировщик");
             do
             {
@@ -214,9 +217,17 @@ namespace Expert_system_for_choosing_antivirus_software
                 Console.WriteLine(knowledgeBase[49]);
             if (firstChoise == 5 && secondChoice == 2 && thirdChoice == 5)
                 Console.WriteLine(knowledgeBase[50]);
+            Console.WriteLine("Вас устроил полученный результат? 1-Да (выход из программы), 0-Нет (перепройти тестирование)");
+            do
+            {
+                result = int.TryParse(Console.ReadLine(), out finalChoice);
+            } while (!result || finalChoice > 1 || finalChoice < 0);
 
 
-
+            if (finalChoice == 0)
+                goto a;
+            if (finalChoice == 1) ;
+            System.Environment.Exit(1);
 
         }
     }
